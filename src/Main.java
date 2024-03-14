@@ -56,11 +56,45 @@ public class Main{
 
         //Dizi Başlatma: Java kodu yazın ve içeriğini {2, 4, 6, 8, 10} değerlerine sahip bir tamsayı dizisi ile başlatın ve içeriğini görüntüleyin.
 
-        int[] dizi= {2, 4, 6, 8, 10};
+        /*int[] dizi= {2, 4, 6, 8, 10};
         System.out.println("Dizi İçeriği:");
 
         for(int i=0; i<dizi.length; i++){
             System.out.println("dizi[" + i + "] = " + dizi[i]);
+        }*/
+
+        //Dizi Toplamı: Tüm tamsayılar dizisindeki tüm öğelerin toplamını hesaplayan ve görüntüleyen bir program oluşturun.
+
+        int[] dizi= {1,2,3,4,5,6,7,8,9,10};
+        int sum=0;
+        for(int i=0; i< dizi.length; i++){
+            sum+=dizi[i];
         }
+        System.out.println("Dizideki sayıların toplamı: "+ sum);
+
+        // dizinin kullanıcıdan alınan versiyonu
+
+        System.out.print("Oluşturmak istediğiniz dizinin boyutunu giriniz: ");
+        int length = get.nextInt();
+
+        int[] arr = new int[length];
+        for (int i = 0; i <length; i++) {
+            System.out.print("Dizinin " + (i + 1) + ". elemanını girin: "); // (+1) deme sebebim indeks sıfırdan başladığı için,saymaya birden başlamasını istediğim için
+            arr[i] = get.nextInt();
+        }
+        System.out.print("Oluşturduğunuz Dizi= ");
+        for(int i=0; i<length; i++){
+            System.out.print(arr[i]);
+            if(i<length-1){
+                System.out.print(", ");
+            }
+        }
+
+        int summ=0;
+        for(int i=0; i<arr.length; i++){
+            summ+= arr[i];
+        }
+        System.out.print("\nDizideki sayıların toplamı: "+ summ);
+
     }
 }
