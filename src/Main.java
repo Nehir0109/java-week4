@@ -134,7 +134,7 @@ public class Main{
         //Dizi Sıralama: Bir tamsayı dizisini artan sırayla sıralayan ve sıralanmış diziyi görüntüleyen bir programı uygulayın.
         //ARTAN SIRAYLA:
 
-        int[] dizi= {25,32,65,66,102,147,2,3,55,1,3,5,999,33,34};
+        /*int[] dizi= {25,32,65,66,102,147,2,3,55,1,3,5,999,33,34};
         int temp;
 
         for(int i=0;i< dizi.length-1; i++){
@@ -166,6 +166,33 @@ public class Main{
         }
         for(int i= dizi.length-1; i>=0; i--){
             System.out.println(dizi[i]);
+        }*/
+
+        //Dizide Arama: Bir dizide belirli bir tamsayıyı arayan ve bulunursa dizinin indeksini veya bulunamazsa bir mesajı görüntüleyen bir program oluşturun.
+
+        int[] dizi= {1,2,3,4,5,6,7,8,9,10};
+
+        System.out.print("\nDizide aramak istediğiniz tam sayıyı giriniz: ");
+        int aranan = get.nextInt();
+
+        int index= -1;
+        for(int i=0; i< dizi.length; i++){
+            if(dizi[i]== aranan){
+                index= i;
+                break;
+            }
+        }
+        if(index != -1){
+            System.out.println("Sayı " + aranan + " dizide bulundu.Indeks no: "+ index);
+        } else {
+            System.out.println("Sayı bulunamadı.");
+        }
+        System.out.print("\nDizi= ");
+        for(int i=0; i<dizi.length; i++){
+            System.out.print(dizi[i]);
+            if(i<dizi.length-1){
+                System.out.print(", ");
+            }
         }
 
 
