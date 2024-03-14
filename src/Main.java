@@ -65,7 +65,7 @@ public class Main{
 
         //Dizi Toplamı: Tüm tamsayılar dizisindeki tüm öğelerin toplamını hesaplayan ve görüntüleyen bir program oluşturun.
 
-        int[] dizi= {1,2,3,4,5,6,7,8,9,10};
+        /*int[] dizi= {1,2,3,4,5,6,7,8,9,10};
         int sum=0;
         for(int i=0; i< dizi.length; i++){
             sum+=dizi[i];
@@ -94,7 +94,41 @@ public class Main{
         for(int i=0; i<arr.length; i++){
             summ+= arr[i];
         }
-        System.out.print("\nDizideki sayıların toplamı: "+ summ);
+        System.out.print("\nDizideki sayıların toplamı: "+ summ);*/
+
+        // En Büyük ve En Küçük Öğe: Bir tamsayı dizisindeki en büyük ve en küçük öğeleri bulan ve bunları görüntüleyen bir Java programı yazın.
+
+        System.out.print("Oluşturmak istediğiniz dizinin boyutunu giriniz: ");
+        int length = get.nextInt();
+
+        int[] arr = new int[length];
+        for (int i = 0; i <length; i++) {
+            System.out.print("Dizinin " + (i + 1) + ". elemanını girin: ");
+            arr[i] = get.nextInt();
+        }
+        System.out.print("Oluşturduğunuz Dizi= ");
+        for(int i=0; i<length; i++){
+            System.out.print(arr[i]);
+            if(i<length-1){
+                System.out.print(", ");
+            }
+        }
+
+        int max= arr[0], min= arr[0];
+
+        for(int i=1; i<length; i++){
+            if(max < arr[i]){
+                max = arr[i];
+            }else if(min > arr[i]){
+                min = arr[i];
+            }
+        }
+        if((-1)* min>max){
+            max = (-1)* min;
+        }
+        System.out.print("\nEn Büyük Öğe: "+ max);
+        System.out.println("\nEn Küçük Öğe: "+ min);
+
 
     }
 }
