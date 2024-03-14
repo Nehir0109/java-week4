@@ -1,5 +1,6 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
-public class Main {
+/*public class Main {
     public static void main(String[] args) {
         Scanner get= new Scanner(System.in);
 
@@ -46,5 +47,20 @@ public class Main {
         }
         double classAverage = (double) classSum/ (students.length * subjects.length);
         System.out.println("\nSınıf Ortalaması: "+ classAverage);
+    }
+}*/
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner get= new Scanner(System.in);
+
+        //Dizi Başlatma: Java kodu yazın ve içeriğini {2, 4, 6, 8, 10} değerlerine sahip bir tamsayı dizisi ile başlatın ve içeriğini görüntüleyin.
+
+        int[] dizi= {2, 4, 6, 8, 10};
+        System.out.println("Dizi İçeriği:");
+
+        for(int i=0; i<dizi.length; i++){
+            System.out.println("dizi[" + i + "] = " + dizi[i]);
+        }
     }
 }
