@@ -50,6 +50,8 @@ import java.util.Scanner;
     }
 }*/
 
+//LOKUM :
+
 public class Main{
     public static void main(String[] args) {
         Scanner get= new Scanner(System.in);
@@ -98,7 +100,7 @@ public class Main{
 
         // En Büyük ve En Küçük Öğe: Bir tamsayı dizisindeki en büyük ve en küçük öğeleri bulan ve bunları görüntüleyen bir Java programı yazın.
 
-        System.out.print("Oluşturmak istediğiniz dizinin boyutunu giriniz: ");
+        /*System.out.print("Oluşturmak istediğiniz dizinin boyutunu giriniz: ");
         int length = get.nextInt();
 
         int[] arr = new int[length];
@@ -127,7 +129,44 @@ public class Main{
             max = (-1)* min;
         }
         System.out.print("\nEn Büyük Öğe: "+ max);
-        System.out.println("\nEn Küçük Öğe: "+ min);
+        System.out.println("\nEn Küçük Öğe: "+ min);*/
+
+        //Dizi Sıralama: Bir tamsayı dizisini artan sırayla sıralayan ve sıralanmış diziyi görüntüleyen bir programı uygulayın.
+        //ARTAN SIRAYLA:
+
+        int[] dizi= {25,32,65,66,102,147,2,3,55,1,3,5,999,33,34};
+        int temp;
+
+        for(int i=0;i< dizi.length-1; i++){
+            for(int j=i+1; j< dizi.length; j++){
+                if(dizi[i]>dizi[j]){
+                    temp= dizi[j];
+                    dizi[j]=dizi[i];
+                    dizi[i]= temp;
+                }
+            }
+        }
+        for(int i=0; i< dizi.length; i++){
+            System.out.println(dizi[i]);
+        }
+
+        //AZALAN SIRAYLA:
+
+        int[] dizi= {25,32,65,66,102,147,2,3,55,1,3,5,999,33,34};
+        int temp;
+
+        for(int i=0;i< dizi.length-1; i++){
+            for(int j=i+1; j< dizi.length; j++){
+                if(dizi[i]>dizi[j]){
+                    temp= dizi[j];
+                    dizi[j]=dizi[i];
+                    dizi[i]= temp;
+                }
+            }
+        }
+        for(int i= dizi.length-1; i>=0; i--){
+            System.out.println(dizi[i]);
+        }
 
 
     }
