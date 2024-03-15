@@ -1,5 +1,6 @@
-import java.sql.SQLOutput;
+import java.util.Arrays;
 import java.util.Scanner;
+//Arrays Recap Project
 /*public class Main {
     public static void main(String[] args) {
         Scanner get= new Scanner(System.in);
@@ -170,7 +171,7 @@ public class Main{
 
         //Dizide Arama: Bir dizide belirli bir tamsayıyı arayan ve bulunursa dizinin indeksini veya bulunamazsa bir mesajı görüntüleyen bir program oluşturun.
 
-        int[] dizi= {1,2,3,4,5,6,7,8,9,10};
+        /*int[] dizi= {1,2,3,4,5,6,7,8,9,10};
 
         System.out.print("\nDizide aramak istediğiniz tam sayıyı giriniz: ");
         int aranan = get.nextInt();
@@ -193,8 +194,42 @@ public class Main{
             if(i<dizi.length-1){
                 System.out.print(", ");
             }
+        }*/
+
+        //Dizi Çoğaltma: Bir diziden yinelenen öğeleri kaldıran ve değiştirilmiş diziyi görüntüleyen bir programı uygulayın.
+
+        System.out.print("Oluşturmak istediğiniz dizinin boyutunu giriniz: ");
+        int length = get.nextInt();
+
+        int[] array = new int[length];
+        for (int i = 0; i <length; i++) {
+            System.out.print("Dizinin " + (i + 1) + ". elemanını girin: ");
+            array[i] = get.nextInt();
         }
+        System.out.println("\nDizinin orijinal Hali: "+Arrays.toString(array));
+        int[] uniqueArray = removeDuplicates(array);
+        System.out.print("Yinelenen öğelerden arındırılmış dizi: "+Arrays.toString(uniqueArray));
 
+    }
 
+    public static int[] removeDuplicates(int[] array){
+        int[] uniqueArray = new int[array.length];
+        int index=0;
+        boolean isDuplicate;
+
+        for(int i=0; i<array.length;i++){
+            isDuplicate=false;
+            for(int j=0; j<i; j++){ //j<i yazdık çünkü bu zaten kontrol edilmiş olan öğeleri tekrar kontrol etmemizi önler ve gereksiz işlemleri engeller.
+                if(array[i]== array[j]){ //bir eleman daha önceki elelmanlarla aynı mı kontrol ettik
+                    isDuplicate= true; //aynı olunca true dedik
+                    break;
+                }
+            }
+            if(!isDuplicate){
+                uniqueArray[index++] = array[i]; //index değişkeni, uniqueArray'ye eklenecek elemanın indeksini tutar ve her eklemeden sonra bir arttırılır.
+                                                // Bu sayede uniqueArray içine elemanlar sırasıyla eklenir.Sonuç olarak,uniqueArray yinelenen elemanlar kaldırılmış olan diziyi içerir.
+            }
+        }
+        return Arrays.copyOf(uniqueArray, index);
     }
 }
