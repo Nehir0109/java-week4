@@ -239,12 +239,43 @@ public class Main{
         Scanner get= new Scanner(System.in);
 
         //İki Boyutlu Diziler: Bir 2D dizi başlatan ve içeriğini tablo biçiminde görüntüleyen bir program oluşturun.
-        int[][] array={ {1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15} };
+
+        /*int[][] array={ {1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15} };
         for(int i=0; i<array.length; i++){
             for(int j=0; j<array[i].length; j++){ //array[i].length yaparak herhangi bir satırdaki sütun sayısını almış olduk.
                 System.out.print(array[i][j]+ "\t");
             }
             System.out.println();
+        }*/
+
+        //Dizi İşleme: Bir diziden belirli bir öğeyi kaldıran ve yerine yeni bir öğe ekleyen Java programı yazın. Değiştirilmiş diziyi görüntüleyin.
+        int[] dizi={1,2,3,4,5,6,7,8,9,10};
+        System.out.println("Dizi: "+Arrays.toString(dizi));
+        System.out.print("Kaldırmak istediğiniz elamanı seçiniz: ");
+        int eskieleman = get.nextInt();
+        System.out.print("Yerine koymak istediğiniz elamanı giriniz: ");
+        int yenieleman= get.nextInt();
+
+        dizidegistir(dizi, eskieleman,yenieleman);
+
+
+    }
+    public static void dizidegistir(int[] dizi, int eskielaman, int yenieleman){
+        int index=-1;
+        for(int i=0; i< dizi.length; i++){
+            if(dizi[i]==eskielaman){
+                index=i;
+                break; // daha çok döngülerde kullanılır veya switch-case'de
+            }
         }
+
+        if(index==-1){
+            System.out.println("Hata! Belirtilen elaman dizide bulunamadı.");
+            return; // fonksiyonlarda ve tek başına if'lerde
+        }
+
+        dizi[index]= yenieleman;
+        System.out.println("Değiştirilmiş dizi: "+Arrays.toString(dizi));
+
     }
 }
