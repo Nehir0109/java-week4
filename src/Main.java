@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 //Arrays Recap Project
 /*public class Main {
     public static void main(String[] args) {
@@ -322,7 +323,7 @@ import java.util.Arrays;
 }*/
 
 //Sıralama Algoritmaları:
-public class Main {
+/*public class Main {
     //Kabarcık Sıralama(Bubble Sort)
     public static void bubbleSort(int[] array) {
         int length = array.length;
@@ -343,5 +344,35 @@ public class Main {
     // Hızlı sıralama (Quick Sort)
     public static void quicksort(int[] array){
 
+    }
+}*/
+
+//FAKTÖRİYEL HESAPLAMA:
+
+public class Main{
+    //Döngü ile hesaplama:
+    public static long iterative(int n) {
+        long factorial =1;
+        for(int i=1; i<=n; i++){
+            factorial *= i;
+        }
+        return factorial;
+    }
+    //Özyineleme ile hesaplama:
+    public static long recursive(int n){
+        if(n==0 || n== 1){
+            return 1;
+        }else{
+            return n* recursive(n-1);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner get= new Scanner(System.in);
+        System.out.print("Faktöriyeli hesaplanacak sayıyı giriniz: ");
+        int number = get.nextInt();
+
+        System.out.println("Döngü (iteratif) faktöriyel: "+ iterative(number));
+        System.out.println("Özyinelemeli (recursive) faktöriyel: " + recursive(number));
     }
 }
