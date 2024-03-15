@@ -53,9 +53,9 @@ import java.util.Scanner;
 
 //LOKUM :
 
-public class Main{
-    public static void main(String[] args) {
-        Scanner get= new Scanner(System.in);
+//public class Main{
+//    public static void main(String[] args) {
+//        Scanner get= new Scanner(System.in);
 
         //Dizi Başlatma: Java kodu yazın ve içeriğini {2, 4, 6, 8, 10} değerlerine sahip bir tamsayı dizisi ile başlatın ve içeriğini görüntüleyin.
 
@@ -198,7 +198,7 @@ public class Main{
 
         //Dizi Çoğaltma: Bir diziden yinelenen öğeleri kaldıran ve değiştirilmiş diziyi görüntüleyen bir programı uygulayın.
 
-        System.out.print("Oluşturmak istediğiniz dizinin boyutunu giriniz: ");
+        /*System.out.print("Oluşturmak istediğiniz dizinin boyutunu giriniz: ");
         int length = get.nextInt();
 
         int[] array = new int[length];
@@ -231,5 +231,20 @@ public class Main{
             }
         }
         return Arrays.copyOf(uniqueArray, index);
+    }*/
+//}
+//Lokum devamı:
+public class Main{
+    public static void main(String[] args) {
+        Scanner get= new Scanner(System.in);
+
+        //İki Boyutlu Diziler: Bir 2D dizi başlatan ve içeriğini tablo biçiminde görüntüleyen bir program oluşturun.
+        int[][] array={ {1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15} };
+        for(int i=0; i<array.length; i++){
+            for(int j=0; j<array[i].length; j++){ //array[i].length yaparak herhangi bir satırdaki sütun sayısını almış olduk.
+                System.out.print(array[i][j]+ "\t");
+            }
+            System.out.println();
+        }
     }
 }
