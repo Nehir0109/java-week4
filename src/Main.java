@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.Scanner;
 //Arrays Recap Project
 /*public class Main {
     public static void main(String[] args) {
@@ -283,7 +282,7 @@ import java.util.Scanner;
 
 //Dizi İstatistikleri: Verilen tamsayı dizisinin ortalama, medyan ve modunu hesaplayan ve görüntüleyen bir programı uygulayın.
 
-public class Main{
+/*public class Main{
     public static void main(String[] args) {
         Scanner get= new Scanner(System.in);
 
@@ -318,6 +317,31 @@ public class Main{
         //medyan:
         //HOCAYA SORACAĞIM
 
+
+    }
+}*/
+
+//Sıralama Algoritmaları:
+public class Main {
+    //Kabarcık Sıralama(Bubble Sort)
+    public static void bubbleSort(int[] array) {
+        int length = array.length;
+        for(int i=0; i< array.length-1; i++){
+            for(int j=0; j< array.length; j++){
+                if(array[i]>array[j]){
+                    int temp= array[i];
+                    array[i]= array[j];
+                    array[j]= temp;
+                }
+            }
+        }
+    }
+    //Birleştirme Sıralama (Merge Sort)
+    public static void mergeSort(int[] array){
+
+    }
+    // Hızlı sıralama (Quick Sort)
+    public static void quicksort(int[] array){
 
     }
 }
